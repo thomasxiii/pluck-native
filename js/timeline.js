@@ -66,7 +66,7 @@ define([
         // })();
 
         function addTweet(data) {
-          console.log(data);
+          // console.log(data);
 
           // bomb out if this is the initial friends data
           if (data.friends) {
@@ -90,8 +90,8 @@ define([
         function getTweets(callback) {
           twitter.getTimeline(undefined, function(tweets, err) {
             if (err) {
-              console.log(err);
-              console.log('USING BACKUP TWEETS');
+              // console.log(err);
+              // console.log('USING BACKUP TWEETS');
               $scope.tweets = JSON.parse(localStorage.getItem('backupTweets'));
             } else {
               $scope.tweets = tweets;
@@ -100,7 +100,7 @@ define([
             $scope.$apply();
 
             callback($scope.tweets);
-            console.log($scope.tweets);
+            // console.log($scope.tweets);
           });
         }
 

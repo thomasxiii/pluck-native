@@ -10,8 +10,8 @@ body {
   background: rgba(31, 32, 37, .9);
 }
 
-body, input, button {
-  font: 10px/1.2 'AvenirNext-Regular', 'HelveticaNeue-Light';
+body, input {
+  font: 2vw/1.3 'AvenirNext-Regular', 'HelveticaNeue-Light';
 }
 
 button {
@@ -25,7 +25,7 @@ controls {
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 0;
   width: 100px;
   border-radius: 5px 0 0 5px;
   -webkit-app-region: drag;
@@ -54,8 +54,13 @@ timeline a:hover {
 
 tweet {
   display: block;
-  padding: 22px 24px;
+  padding: 1.25em 2em;
   clear: both;
+}
+
+tweet:hover .points,
+tweet:hover .time {
+  opacity: 1;
 }
 
 .tweet {
@@ -65,6 +70,7 @@ tweet {
 .author-avatar {
   position: absolute;
   margin-right: 12px;
+  z-index: 1;
 }
 
 .author-image {
@@ -76,14 +82,10 @@ tweet {
   border: 3px solid white;
 }
 
-.author-avatar.original-author {
+.retweet .author-avatar.author {
   top: -10px;
   left: -10px;
-}
-
-.author-avatar.author {
-  top: 0;
-  left: 0;
+  z-index: 0;
 }
 
 .author-avatar img {
@@ -96,7 +98,7 @@ tweet {
 
 .tweet-text {
   word-break: break-word;
-  font-size: 2vw;
+  font-size: 1em;
 }
 
 h3 {
@@ -104,8 +106,13 @@ h3 {
   font-size: 13px;
 }
 
+.user-name {
+  font-family: 'AvenirNext-Bold';
+  font-size: 1em;
+}
+
 .original-name {
-  font-size: 10px;
+  font-size: .8em;
   color: rgb(155, 155, 155);
 }
 
@@ -114,6 +121,8 @@ h3 {
   font-size: 9px;
   font-weight: 400;
   color: rgb(182, 182, 182);
+  opacity: 0;
+  -webkit-transition: opacity .2s;
 }
 
 .avatar {
@@ -130,8 +139,15 @@ h3 {
 }
 
 .points {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 25px;
   font-size: 9px;
+  text-align: right;
   color: rgb(182, 182, 182);
+  opacity: 0;
+  -webkit-transition: opacity .2s;
 }
 
 .handicap-buttons {
@@ -197,6 +213,7 @@ h3 {
   border-radius: 50%;
   border: none;
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
+  vertical-align: top;
 }
 
 .stoplight-close {
@@ -267,13 +284,14 @@ viewport iframe {
   text-align: center;
   color: rgb(200, 200, 200);
   line-height: 28px;
+  font-size: 10px;
   -webkit-app-region: drag;
 }
 
 .icon {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   background: rgba(255, 255, 255, .7);
   -webkit-mask-size: cover;
 }
@@ -313,8 +331,10 @@ viewport iframe {
 .primary-nav {
   position: absolute;
   top: 70px;
-  left: 25px;
-  width: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 44px;
 }
 
 .primary-nav button {
@@ -353,4 +373,106 @@ viewport iframe {
 
 .sort-buttons button.selected .icon {
   background-color: rgb(90, 129, 255);
+}
+
+@media (max-width: 530px) {
+  body {
+    font-size: 3vw;
+  }
+
+  controls {
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+  }
+
+  .sort-buttons {
+    left: 0;
+    top: 110px;
+    border-radius: 0;
+  }
+
+  timeline {
+    top: 160px;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .primary-nav {
+    top: 32px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    width: auto;
+    display: flex;
+    z-index: 2;
+  }
+
+  .primary-nav button {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .avatar {
+    width: 150px;
+    right: 0;
+    left: 0;
+    bottom: -23px;
+    margin: auto;
+    opacity: .25;
+  }
+}
+
+@media (max-width: 390px) {
+  body {
+    font-size: 3.5vw;
+  }
+
+  tweet {
+    padding: 1em 1.5em;
+  }
+}
+
+@media (min-width: 890px) {
+  body {
+    font-size: 1.5vw;
+  }
+
+  controls {
+    width: 30%;
+  }
+
+  timeline {
+    left: 30%;
+  }
+
+  .sort-buttons {
+    left: 30%;
+  }
+
+  .primary-nav {
+    display: flex;
+    top: 340px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 10%;
+    width: auto;
+  }
+
+  .primary-nav button {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .avatar {
+    top: 100px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    opacity: .5;
+  }
 }

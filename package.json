@@ -9,7 +9,8 @@
     "toolbar": false,
     "frame": false,
     "width": 600,
-    "height": 750
+    "height": 750,
+    "min_width": 320
   },
   "chromium-args": "--enable-experimental-web-platform-features"
 }

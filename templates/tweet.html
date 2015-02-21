@@ -1,38 +1,32 @@
 <div class="tweet">
-  <div class="author">
+  <div class="author" ng-class="{retweet: tweet.retweeted_status}">
     <div class="author-avatar original-author" ng-show="tweet.retweeted_status" title="@{{ tweet.retweeted_status.user.screen_name }}">
-      <div class="handicap-buttons">
-        <button class="up" ng-click="adjustHandicap(1)">▲</button>
-        <button class="down" ng-click="adjustHandicap(-1)">▼</button>
-      </div>
       <div class="author-image">
         <img src="{{ tweet.retweeted_status.user.profile_image_url }}">
       </div>
     </div>
     <div class="author-avatar author" title="@{{ tweet.user.screen_name }}">
-      <div class="handicap-buttons">
-        <div class="handicap">{{ handicap }}</div>
-        <button class="up" ng-click="adjustHandicap(1)">▲</button>
-        <button class="down" ng-click="adjustHandicap(-1)">▼</button>
-      </div>
       <div class="author-image">
         <img src="{{ tweet.user.profile_image_url }}">
       </div>
     </div>
   </div>
   <div class="tweet-contents">
-    <h3>
-      <span>{{ tweet.user.name }}</span>
-      <span class="original-name" ng-show="tweet.retweeted_status">via {{ tweet.retweeted_status.user.name }}</span>
+    <h3 class="names">
+      <span ng-hide="tweet.retweeted_status">
+        <span class="user-name">{{ tweet.user.name }}</span>
+      </span>
+      <span ng-show="tweet.retweeted_status">
+        <span class="user-name">{{ tweet.retweeted_status.user.name }}</span>
+        <span class="original-name">via {{ tweet.user.name }}</span>
+      </span>
       <span class="time">{{ displayDate }}</span>
     </h3>
     <div class="tweet-text"></div>
-    <div class="points">
-      <span class="score">S: {{ tweet.score }}</span>
-      <span class="score">H: {{ handicap }}</span>
-      <span class="score">HS: {{ tweet.handicappedScore }}</span>
+    <!-- <div class="points">
       <span class="favorites">F: {{ tweet.favorite_count }}</span>
       <span class="retweets">RT: {{ tweet.retweet_count }}</span>
-    </div>
+      <span class="score">S: {{ tweet.score }}</span>
+    </div> -->
   </div>
 </div>

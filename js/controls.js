@@ -24,7 +24,7 @@ define([
 
         function getProfile() {
           twitter.getProfile(function(err, data, response) {
-            console.log(err, data);
+            // console.log(err, data);
             if (err) {
               throw err;
             }

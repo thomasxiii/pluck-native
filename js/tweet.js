@@ -10,8 +10,8 @@ define([
   var MAX_WIDTH = 600;
   // var MIN_FONT_SIZE = 10;
   // var MAX_FONT_SIZE = 22;
-  var MIN_FONT_SIZE = 2;
-  var MAX_FONT_SIZE = 5;
+  var MIN_FONT_SIZE = 1;
+  var MAX_FONT_SIZE = 2;
   var MAX_SCORE = 250;
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var MIN_HUE = 212;
@@ -54,7 +54,7 @@ define([
           }
 
           $scope.$tweetText.css({
-            fontSize: fontSize + 'vw',
+            fontSize: fontSize + 'em',
             fontFamily: fontFamily
           });
 
