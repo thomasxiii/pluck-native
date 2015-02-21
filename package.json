@@ -1,0 +1,15 @@
+{
+  "name": "Pluck",
+  "main": "index.html",
+  "webkit": {
+    "plugin": true
+  },
+  "window": {
+    "transparent": true,
+    "toolbar": false,
+    "frame": false,
+    "width": 600,
+    "height": 750
+  },
+  "chromium-args": "--enable-experimental-web-platform-features"
+}

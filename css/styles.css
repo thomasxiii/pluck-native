@@ -1,0 +1,356 @@
+html {
+  height: 100%;
+  border-radius: 5px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  background: rgba(31, 32, 37, .9);
+}
+
+body, input, button {
+  font: 10px/1.2 'AvenirNext-Regular', 'HelveticaNeue-Light';
+}
+
+button {
+  padding: 0;
+  background: none;
+}
+
+controls {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100px;
+  border-radius: 5px 0 0 5px;
+  -webkit-app-region: drag;
+}
+
+timeline {
+  position: fixed;
+  display: block;
+  top: 50px;
+  left: 100px;
+  right: 0;
+  bottom: 0;
+  border-bottom-right-radius: 5px;
+  background: white;
+  overflow: auto;
+}
+
+timeline a {
+  color: rgb(90, 129, 255);
+  -webkit-transition: all .2s;
+}
+
+timeline a:hover {
+  color: rgb(234, 143, 40);
+}
+
+tweet {
+  display: block;
+  padding: 22px 24px;
+  clear: both;
+}
+
+.tweet {
+  position: relative;
+}
+
+.author-avatar {
+  position: absolute;
+  margin-right: 12px;
+}
+
+.author-image {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+}
+
+.author-avatar.original-author {
+  top: -10px;
+  left: -10px;
+}
+
+.author-avatar.author {
+  top: 0;
+  left: 0;
+}
+
+.author-avatar img {
+  width: 100%;
+}
+
+.tweet-contents {
+  margin-left: 60px;
+}
+
+.tweet-text {
+  word-break: break-word;
+  font-size: 2vw;
+}
+
+h3 {
+  margin: 0 0 3px;
+  font-size: 13px;
+}
+
+.original-name {
+  font-size: 10px;
+  color: rgb(155, 155, 155);
+}
+
+.time {
+  float: right;
+  font-size: 9px;
+  font-weight: 400;
+  color: rgb(182, 182, 182);
+}
+
+.avatar {
+  position: absolute;
+  left: 10px;
+  bottom: -15px;
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.points {
+  font-size: 9px;
+  color: rgb(182, 182, 182);
+}
+
+.handicap-buttons {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.handicap-buttons button {
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  border: none;
+  background: none;
+  text-align: center;
+  color: rgba(90, 129, 255, .9);
+}
+
+.handicap-buttons .up {
+  top: -15px;
+}
+
+.handicap-buttons .down {
+  bottom: -15px;
+}
+
+.handicap-buttons .handicap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(90, 129, 255, .9);
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 38px;
+  color: white;
+  text-align: center;
+}
+
+.author-avatar:hover .handicap-buttons {
+  opacity: 1;
+}
+
+.stoplight-controls {
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  margin: auto;
+  height: 11px;
+  z-index: 100;
+}
+
+.stoplight-controls button {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  margin-left: 6px;
+  border-radius: 50%;
+  border: none;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
+}
+
+.stoplight-close {
+  background-color: rgb(235, 99, 132);
+}
+
+.stoplight-minimize {
+  background-color: rgb(248, 224, 49);
+}
+
+.stoplight-maximize {
+  background-color: rgb(44, 233, 112);
+}
+
+.sort-buttons {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 100px;
+  right: 0;
+  height: 40px;
+  padding: 5px 10px 5px 0;
+  background: rgb(237, 242, 247);
+  border-top-right-radius: 5px;
+}
+
+.filter-control {
+  position: relative;
+  flex-grow: 1;
+}
+
+.filter-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.filter-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0;
+  z-index: 0;
+  width: 100%;
+  background: none;
+  font-size: 13px;
+  text-indent: 40px;
+}
+
+viewport {
+  position: fixed;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+}
+
+viewport iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.titlebar {
+  height: 28px;
+  text-align: center;
+  color: rgb(200, 200, 200);
+  line-height: 28px;
+  -webkit-app-region: drag;
+}
+
+.icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, .7);
+  -webkit-mask-size: cover;
+}
+
+.home-icon {
+  -webkit-mask-image: url(../images/home-icon.svg);
+}
+
+.search-icon {
+  -webkit-mask-image: url(../images/search-icon.svg);
+}
+
+.compose-icon {
+  -webkit-mask-image: url(../images/compose-icon.svg);
+}
+
+.at-icon {
+  -webkit-mask-image: url(../images/at-icon.svg);
+}
+
+.user-icon {
+  -webkit-mask-image: url(../images/user-icon.svg);
+}
+
+.clock-icon {
+  -webkit-mask-image: url(../images/clock-icon.svg);
+}
+
+.rank-icon {
+  -webkit-mask-image: url(../images/rank-icon.svg);
+}
+
+.filter-icon {
+  -webkit-mask-image: url(../images/filter-icon.svg);
+}
+
+.primary-nav {
+  position: absolute;
+  top: 70px;
+  left: 25px;
+  width: 50px;
+}
+
+.primary-nav button {
+  margin-bottom: 12px;
+}
+
+.primary-nav button .icon {
+  -webkit-transition: all .2s;
+}
+
+.primary-nav button:hover .icon {
+  background: rgba(255, 255, 255, 1);
+}
+
+.primary-nav button.selected .icon {
+  background-color: rgb(90, 129, 255);
+}
+
+.sort-buttons .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.sort-buttons button {
+  margin-right: 5px;
+}
+
+.sort-buttons .icon {
+  -webkit-transition: all .2s;
+  background: rgba(0, 0, 0, .25);
+}
+
+.sort-buttons button:hover .icon {
+  background: rgba(0, 0, 0, .5);
+}
+
+.sort-buttons button.selected .icon {
+  background-color: rgb(90, 129, 255);
+}

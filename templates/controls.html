@@ -1,0 +1,36 @@
+<stoplights buttons="111"></stoplights>
+
+<nav class="primary-nav">
+  <button class="selected">
+    <span class="icon home-icon"></span>
+  </button>
+  <button>
+    <span class="icon at-icon"></span>
+  </button>
+  <button>
+    <span class="icon search-icon"></span>
+  </button>
+  <button>
+    <span class="icon compose-icon"></span>
+  </button>
+  <button>
+    <span class="icon user-icon"></span>
+  </button>
+</nav>
+
+<div class="sort-buttons">
+  <div class="filter-control">
+    <span class="icon filter-icon"></span>
+    <input ng-model="query" class="filter-input" type="text" placeholder="filter">
+  </div>
+  <button ng-class="{selected: sortBy == 'time'}" ng-click="setSort('time')">
+    <span class="icon clock-icon"></span>
+  </button>
+  <button ng-class="{selected: sortBy == 'score'}" ng-click="setSort('score')">
+    <span class="icon rank-icon"></span>
+  </button>
+</div>
+
+<div class="avatar">
+  <img src="{{ avatar }}">
+</div>
